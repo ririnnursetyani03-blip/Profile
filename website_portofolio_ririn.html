@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portofolio — Ririn Nur Setyani</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind via CDN (untuk demo cepat) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--accent:#1E3A8A; /* biru navy */}
+    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial}
+    .glass{background:rgba(255,255,255,0.6);backdrop-filter:blur(6px)}
+    /* Animasi fade-in */
+  .fade-in{opacity:0;transform:translateY(20px);transition:all .8s ease}
+  .fade-in.show{opacity:1;transform:translateY(0)}
+
+  /* Hover efek kartu */
+  .card-hover{transition:transform .3s ease, box-shadow .3s ease}
+  .card-hover:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,0.08)}
+
+  /* Smooth scroll */
+  html{scroll-behavior:smooth}
+  /* Gradient biru dinamis */
+  /* gradient header removed */
+  @keyframes moveGradient{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+
+  /* Tombol biru animasi */
+  .btn-anim{
+    transition: all .3s ease;
+  }
+  .btn-anim:hover{
+    transform: translateY(-3px);
+    box-shadow:0 8px 18px rgba(30,58,138,0.3);
+  }
+
+  /* Kartu glowing biru */
+  .glow-biru:hover{
+    box-shadow:0 0 20px rgba(59,130,246,0.4);
+  }
+  /* typing effect removed */
+
+  /* Dark mode */
+  .dark-mode{background:#0f172a !important;color:white !important}
+  .dark-card{background:#1e293b !important;color:white !important;border-color:#334155 !important}
+
+  /* Navbar scroll effect */
+  .nav-scroll{background:rgba(255,255,255,0.8);backdrop-filter:blur(8px);box-shadow:0 4px 15px rgba(0,0,0,0.1)}
+
+  /* Floating particles */
+  .particles{position:fixed;inset:0;z-index:-1;overflow:hidden}
+  .particle{position:absolute;width:6px;height:6px;background:rgba(255,255,255,0.5);border-radius:50%;animation:float 10s linear infinite}
+  @keyframes float{0%{transform:translateY(0)}100%{transform:translateY(-100vh)}}
+</style>
+</head>
+<body class="bg-gradient-to-b from-white to-blue-50 text-gray-800">
+<div class='particles'>
+  <div class='particle' style='left:10%;animation-duration:12s'></div>
+  <div class='particle' style='left:30%;animation-duration:9s'></div>
+  <div class='particle' style='left:50%;animation-duration:11s'></div>
+  <div class='particle' style='left:70%;animation-duration:10s'></div>
+  <div class='particle' style='left:90%;animation-duration:8s'></div>
+</div>
+  <!-- Navbar -->
+  <nav class="fixed w-full z-30 top-4">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex items-center justify-between glass rounded-2xl p-3 shadow">
+        <a href="#hero" class="font-semibold text-lg text-gray-900">Ririn Nur Setyani</a>
+        <div class="hidden md:flex gap-4 items-center">
+          <a href="#about" class="hover:text-[var(--accent)]">Tentang</a>
+          <a href="#projects" class="hover:text-[var(--accent)]">Proyek</a>
+          <a href="#skills" class="hover:text-[var(--accent)]">Keahlian</a>
+          <a href="#contact" class="hover:text-[var(--accent)]">Kontak</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="#" id="downloadCv" class="px-3 py-1 bg-[var(--accent)] text-white rounded-md text-sm hidden md:inline-block">Unduh CV</a>
+          <button id="menuBtn" class="md:hidden p-2 rounded-md hover:bg-gray-100">☰</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="hero" class=" pt-28 pb-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <p class="text-sm text-[var(--accent)] font-semibold">Hai, saya</p>
+          <h1 class="text-4xl md:text-5xl font-bold text-[var(--accent)]">Ririn Nur Setyani</h1>
+          <p class="mt-4 text-gray-700">Mahasiswi di <span class="font-semibold">Universitas Komputama Majenang</span>. Saya tertarik pada pengembangan web, desain UI/UX, dan sistem informasi. Di sini saya menampilkan proyek, kemampuan, dan cara menghubungi saya.</p>
+          <div class="mt-6 flex gap-3">
+            <a href="#projects" class="px-4 py-2 border rounded-md hover:bg-gray-100">Lihat Proyek</a>
+            <a href="#contact" class="px-4 py-2 bg-[var(--accent)] text-white rounded-md btn-anim">Hubungi Saya</a>
+          </div>
+        </div>
+        <div class="flex justify-center">
+          <!-- Placeholder for profile image -->
+          <!-- foto dihapus -->
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about" class="py-12 bg-blue-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="glass rounded-2xl p-6 shadow bg-blue-100">
+        <h2 class="text-2xl font-semibold">Tentang Saya</h2>
+        <p class="mt-3 text-gray-700">Halo! Nama saya <strong>Ririn Nur Setyani</strong>, seorang mahasiswi di Universitas Komputama Majenang. Saat ini saya sedang mempelajari pengembangan aplikasi web, desain antarmuka pengguna, dan analisis sistem informasi.</p>
+        <ul class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-600">
+          <li><strong>Email:</strong> ririnnursetyani03@gmail.com</li>
+          <li><strong>Telepon:</strong> +62 882003625869</li>
+          <li><strong>Lokasi:</strong> Majenang, Indonesia</li>
+          <li><strong>Pendidikan:</strong> Universitas Komputama Majenang</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-12 bg-blue-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl font-semibold text-black">Proyek</h2>
+      <p class="text-gray-600 mt-2">Beberapa proyek yang pernah saya kerjakan — baik tugas kuliah maupun proyek pribadi.</p>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <!-- Project card -->
+        <article class="p-4 border rounded-lg bg-blue-100 shadow-sm card-hover fade-in glow-biru">
+          <h3 class="font-semibold">Sistem Informasi Penggajian (Web)</h3>
+          <p class="text-sm text-gray-600 mt-2">Sistem sederhana untuk manajemen penggajian berbasis web menggunakan PHP & MySQL. Fitur: manajemen data karyawan, perhitungan gaji, dan laporan.</p>
+          <div class="mt-3 flex gap-2 text-xs">
+            <span class="px-2 py-1 border rounded">PHP</span>
+            <span class="px-2 py-1 border rounded">MySQL</span>
+            <span class="px-2 py-1 border rounded">Bootstrap</span>
+          </div>
+        </article>
+
+        <article class="p-4 border rounded-lg bg-blue-100 shadow-sm card-hover fade-in glow-biru">
+          <h3 class="font-semibold">Aplikasi Absensi Mobile (Prototype)</h3>
+          <p class="text-sm text-gray-600 mt-2">Prototype aplikasi absensi yang memudahkan pencatatan hadir menggunakan QR Code dan laporan kehadiran otomatis (Figma prototype + dokumentasi).</p>
+          <div class="mt-3 flex gap-2 text-xs">
+            <span class="px-2 py-1 border rounded">Figma</span>
+            <span class="px-2 py-1 border rounded">UX</span>
+          </div>
+        </article>
+
+        <!-- Add more projects as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-12">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl font-semibold">Keahlian</h2>
+      <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="p-4 border rounded-lg bg-blue-100 card-hover fade-in glow-biru">
+          <h4 class="font-semibold">Pengembangan Web</h4>
+          <p class="text-sm text-gray-600 mt-2">HTML, CSS, JavaScript, PHP, CodeIgniter, REST API</p>
+        </div>
+        <div class="p-4 border rounded-lg bg-blue-100 card-hover fade-in glow-biru">
+          <h4 class="font-semibold">Desain UI/UX</h4>
+          <p class="text-sm text-gray-600 mt-2">Figma, prototyping, user research, usability testing</p>
+        </div>
+        <div class="p-4 border rounded-lg bg-blue-100 card-hover fade-in glow-biru">
+          <h4 class="font-semibold">Database & Analisis</h4>
+          <p class="text-sm text-gray-600 mt-2">MySQL, ERD, analisis sistem</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-12 bg-gradient-to-b from-white to-gray-50">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="glass rounded-2xl p-6 shadow">
+        <h2 class="text-2xl font-semibold">Kontak</h2>
+        <p class="text-gray-600 mt-2">Tertarik bekerja sama atau butuh info lebih lanjut? Kirim pesan!</p>
+        <form id="contactForm" class="mt-4 grid grid-cols-1 gap-3">
+          <input type="text" id="name" placeholder="Nama" class="p-3 border rounded" required>
+          <input type="email" id="email" placeholder="Email" class="p-3 border rounded" required>
+          <textarea id="message" rows="4" placeholder="Pesan" class="p-3 border rounded" required></textarea>
+          <div class="flex gap-3">
+            <button type="submit" class="px-4 py-2 bg-[var(--accent)] text-white rounded-md btn-anim">Kirim</button>
+            <button type="reset" class="px-4 py-2 border rounded-md">Reset</button>
+          </div>
+        </form>
+        <p id="formStatus" class="mt-3 text-sm text-green-600 hidden">Pesan terkirim! (Demo — form tidak benar-benar mengirim di file statis)</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-6 text-center text-sm text-gray-600">
+    © 2025 Ririn Nur Setyani — dibuat dengan ❤️
+  </footer>
+
+  <script>
+    // Mobile menu toggle (simple)
+    const menuBtn = document.getElementById('menuBtn');
+    menuBtn?.addEventListener('click', ()=>{
+      const menu = document.createElement('div');
+      menu.className='fixed inset-0 bg-black/30 flex justify-end';
+      menu.innerHTML=`<div class="w-2/3 max-w-xs bg-white p-6">
+        <button id=\"closeMenu\" class=\"mb-4\">✕</button>
+        <nav class=\"flex flex-col gap-3\"> <a href=\"#about\">Tentang</a> <a href=\"#projects\">Proyek</a> <a href=\"#skills\">Keahlian</a> <a href=\"#contact\">Kontak</a> </nav>
+      </div>`;
+      document.body.appendChild(menu);
+      document.getElementById('closeMenu')?.onclick = ()=> menu.remove();
+      menu.addEventListener('click', (e)=>{ if(e.target===menu) menu.remove(); })
+    });
+
+    // Simple contact form demo behavior
+    const contactForm = document.getElementById('contactForm');
+    contactForm?.addEventListener('submit',(e)=>{
+      e.preventDefault();
+      document.getElementById('formStatus')?.classList.remove('hidden');
+      setTimeout(()=> document.getElementById('formStatus')?.classList.add('hidden'),3000);
+      contactForm.reset();
+    });
+
+    // Download CV placeholder — generates a simple text file on the fly
+    document.getElementById('downloadCv')?.addEventListener('click',(e)=>{
+      e.preventDefault();
+      const cvText = `CV - Ririn Nur Setyani\n\nPendidikan:\n- Universitas Komputama Majenang\n\nKeahlian:\n- Pengembangan Web, UI/UX, Database\n\nKontak:\n- ririn.email@example.com`;
+      const blob = new Blob([cvText],{type:'text/plain'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'CV_Ririn_Nur_Setyani.txt';
+      document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    });
+  </script>
+  <script>
+    // Animasi fade-in saat scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const options = {threshold: 0.2};
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){entry.target.classList.add('show');}
+      });
+    }, options);
+    faders.forEach(el=>observer.observe(el));
+  </script>
+  <script>
+    // Dark mode toggle
+    const body=document.body;
+    const toggle=document.createElement('button');
+    toggle.innerText='🌙';
+    toggle.className='fixed bottom-5 right-5 p-3 bg-[var(--accent)] text-white rounded-full shadow-lg';
+    document.body.appendChild(toggle);
+    toggle.onclick=()=>{
+      body.classList.toggle('dark-mode');
+      document.querySelectorAll('.glass').forEach(e=>e.classList.toggle('dark-card'));
+    };
+
+    // Navbar scroll effect
+    const nav=document.querySelector('nav');
+    window.addEventListener('scroll',()=>{
+      if(window.scrollY>50){nav.classList.add('nav-scroll')}else{nav.classList.remove('nav-scroll')}
+    });
+  </script>
+</body>
+</html>
